@@ -70,18 +70,19 @@ export default function SkillsSection() {
 
     if (!sectionRef.current || !skillsRef.current) return
 
-    // Animate skill bars
     const skillBars = skillsRef.current.querySelectorAll(".skill-bar")
 
     skillBars.forEach((bar) => {
-      const fill = bar.querySelector(".skill-bar-fill")
-      if (!fill) return
+      const fill = bar.querySelector(".skill-bar-fill");
+      if (!fill) return;
+
+      const level = Number(bar.getAttribute("data-skill-level")) || 0;
 
       gsap.fromTo(
         fill,
         { width: "0%" },
         {
-          width: "100%",
+          width: `${level}%`,
           duration: 1.5,
           ease: "power2.out",
           scrollTrigger: {
@@ -169,7 +170,10 @@ export default function SkillsSection() {
                   <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">{skill.level}%</span>
                 </div>
 
-                <div className="skill-bar h-2 overflow-hidden rounded-full bg-gray-200 dark:bg-gray-700">
+                <div
+                  className="skill-bar h-2 overflow-hidden rounded-full bg-gray-200 dark:bg-gray-700"
+                  data-skill-level={skill.level}
+                >
                   <div
                     className="skill-bar-fill h-full rounded-full bg-gradient-to-r from-teal-400 to-blue-500"
                     style={{ width: `${skill.level}%` }}
