@@ -53,7 +53,7 @@ This is a personal portfolio website built with [Next.js](https://nextjs.org/) a
 You can deploy this portfolio to [Vercel](https://vercel.com/), [Netlify](https://www.netlify.com/), or any platform that supports Next.js.
 
 ## My Deployment
-https://deepath.live
+https://deepath.tech
 
 ## Customization
 
