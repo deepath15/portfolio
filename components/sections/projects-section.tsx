@@ -37,9 +37,9 @@ export default function ProjectsSection() {
    {
       title: "Ease Bot",
       description:
-        "An AI assistant for automation and productivity, helping users streamline tasks and improve workflow efficiency.",
+        "A 3D animated navigation of our College named Achariya College Of Engineering at puducherry",
       tags: ["React", "Firebase", "AI", "Node.js"],
-      image: "/placeholder-logo.png",
+      image: "/placeholder.svg",
       liveUrl: "https://easebot.deepath.live",
       githubUrl: "https://github.com/deepath15/easebot",
     },
@@ -56,7 +56,7 @@ export default function ProjectsSection() {
   const otherProjects = [
      {
       title: "E-Commerce Dashboard",
-      description: "A comprehensive admin dashboard for managing products, orders, and customer data.",
+      description: "A comprehensive admin dashboard for managing products, orders, and customer data. Implemented with a microservices architecture.",
       tags: ["React", "Chart.js", "Node.js", "MongoDB"],
       liveUrl: "",
       githubUrl: "",
@@ -67,7 +67,7 @@ export default function ProjectsSection() {
       description: "A secure and interactive LMS platform with integrated PDF viewing and AI-powered content reading through API support.",
       tags: ["Next.js", "MongoDB", "Express", "Node.js"],
       liveUrl: "",
-      githubUrl: "",
+      githubUrl: "https://github.com/deepath15/edu",
     },
   ]
 
@@ -259,7 +259,7 @@ export default function ProjectsSection() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{
-                  y: -10,
+                  y: -0.1,
                   boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
                 }}
                 className="group rounded-xl bg-white p-6 shadow-lg transition-all duration-500 dark:bg-gray-800/50"
@@ -286,24 +286,41 @@ export default function ProjectsSection() {
                 </div>
 
                 <div className="flex justify-between">
-                  <Link
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center text-sm font-medium text-teal-500 transition-all duration-300 hover:text-teal-600 hover:underline dark:text-teal-400 dark:hover:text-teal-300"
-                  >
-                    Live Demo <ExternalLink className="ml-1 h-3 w-3" />
-                  </Link>
-                  <Link
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center text-sm font-medium text-gray-600 transition-all duration-300 hover:text-gray-900 hover:underline dark:text-gray-400 dark:hover:text-white"
-                  >
-                    View Code <Github className="ml-1 h-3 w-3" />
-                  </Link>
+                  {project.liveUrl ? (
+                    <Link
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center text-sm font-medium text-teal-500 transition-all duration-300 hover:text-teal-600 hover:underline dark:text-teal-400 dark:hover:text-teal-300"
+                    >
+                      Live Demo <ExternalLink className="ml-1 h-3 w-3" />
+                    </Link>
+                  ) : (
+                    <span
+                      className="flex items-center text-sm font-medium text-gray-400 cursor-not-allowed"
+                      title="Live demo not available"
+                    >
+                      Live Demo <ExternalLink className="ml-1 h-3 w-3" />
+                    </span>
+                  )}
+                  {project.githubUrl ? (
+                    <Link
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center text-sm font-medium text-gray-600 transition-all duration-300 hover:text-gray-900 hover:underline dark:text-gray-400 dark:hover:text-white"
+                    >
+                      View Code <Github className="ml-1 h-3 w-3" />
+                    </Link>
+                  ) : (
+                    <span
+                      className="flex items-center text-sm font-medium text-gray-400 cursor-not-allowed"
+                      title="Code not available"
+                    >
+                      View Code <Github className="ml-1 h-3 w-3" />
+                    </span>
+                  )}
                 </div>
-
                 <div className="absolute -bottom-px left-0 h-1 w-0 rounded-b-xl bg-gradient-to-r from-teal-400 to-blue-500 transition-all duration-300 group-hover:w-full"></div>
               </motion.div>
             ))}
