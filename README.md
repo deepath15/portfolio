@@ -57,9 +57,7 @@ You can deploy this portfolio to [Vercel](https://vercel.com/), [Netlify](https:
 - Update your personal information, projects, and contact details in the respective components.
 - Modify styles and sections as needed.
 
-## License
 
-This project is licensed under the MIT License.
 
 ---
 
