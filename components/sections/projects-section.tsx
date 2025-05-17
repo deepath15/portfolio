@@ -16,11 +16,20 @@ export default function ProjectsSection() {
   const featuredRef = useRef<HTMLDivElement>(null)
   const [activeProject, setActiveProject] = useState(0)
 
-  const featuredProjects = [
+  interface featuredProjectType {
+    title: string
+    description: string
+    image?: string | undefined
+    tags: string[]
+    liveUrl: string
+    githubUrl: string
+  }
+
+  const featuredProjects: featuredProjectType[] = [
     {
       title: "Sketch-to-Code Platform",
       description: "AI-driven code generation from UI designs, transforming sketches into functional frontend code.",
-      image: "/placeholder.svg?height=600&width=800",
+      image: "/low-code.png",
       tags: ["React", "AI", "Node.js", "Canvas API"],
       liveUrl: "https://example.com",
       githubUrl: "https://github.com/deepath15/project",
@@ -35,7 +44,7 @@ export default function ProjectsSection() {
     {
       title: "Inventory Management System",
       description: "A role-based stock tracking solution for businesses to manage inventory efficiently.",
-      image: "/placeholder.svg?height=600&width=800",
+      image: "/ims.png",
       tags: ["React", "Node.js", "MongoDB", "Express"],
       liveUrl: "https://example.com",
       githubUrl: "https://github.com/deepath15/project",
@@ -89,7 +98,23 @@ export default function ProjectsSection() {
     setActiveProject((prev) => (prev === 0 ? featuredProjects.length - 1 : prev - 1))
   }
 
-  
+  const projectRefs = useRef<(HTMLDivElement | null)[]>([])
+  const isFirstRender = useRef(true);
+
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+    const ref = projectRefs.current[activeProject];
+    if (ref) {
+      ref.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+      });
+    }
+  }, [activeProject])
+
 
   return (
     <section id="projects" ref={sectionRef} className="relative overflow-hidden bg-gray-50 py-24 dark:bg-gray-900">
@@ -115,7 +140,7 @@ export default function ProjectsSection() {
           <div className="md:col-span-8 ">
             <div className="relative h-[500px] overflow-hidden rounded-2xl shadow-xl">
               <ImageEffect
-                src={featuredProjects[activeProject].image}
+                src={featuredProjects[activeProject].image || "/placeholder.svg"}
                 alt={featuredProjects[activeProject].title}
                 width={800}
                 height={450}
@@ -132,13 +157,13 @@ export default function ProjectsSection() {
                     </span>
                   ))}
                 </div>
-                <div className="flex gap-4">
+                <div className="flex gap-4">  
                   <Button asChild size="lg" className="rounded-full bg-gradient-to-r from-teal-400 to-blue-500 px-6">
                     <Link href={featuredProjects[activeProject].liveUrl} target="_blank">
                       Live Demo <ExternalLink className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
-                  <Button asChild size="lg" variant="outline" className="rounded-full px-6">
+                  <Button asChild size="lg" className="rounded-full px-6">
                     <Link href={featuredProjects[activeProject].githubUrl} target="_blank">
                       GitHub <Github className="ml-2 h-4 w-4" />
                     </Link>
@@ -162,6 +187,7 @@ export default function ProjectsSection() {
                   {featuredProjects.map((project, index) => (
                     <div
                       key={index}
+                      ref={(el) => { projectRefs.current[index] = el; }}
                       className={`featured-project group cursor-pointer overflow-hidden rounded-xl  ${activeProject === index
                       ? "border-2 border-teal-400 dark:ring-teal-500"
                       : "opacity-70 hover:opacity-100"
