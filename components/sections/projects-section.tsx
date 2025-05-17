@@ -31,41 +31,43 @@ export default function ProjectsSection() {
       description: "AI-driven code generation from UI designs, transforming sketches into functional frontend code.",
       image: "/low-code.png",
       tags: ["React", "AI", "Node.js", "Canvas API"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com/deepath15/project",
+      liveUrl: "",
+      githubUrl: "",
     },
-    {
-      title: "E-Commerce Dashboard",
-      description: "A comprehensive admin dashboard for managing products, orders, and customer data.",
-      tags: ["React", "Chart.js", "Node.js", "MongoDB"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com/deepath15/project",
+   {
+      title: "Ease Bot",
+      description:
+        "An AI assistant for automation and productivity, helping users streamline tasks and improve workflow efficiency.",
+      tags: ["React", "Firebase", "AI", "Node.js"],
+      image: "/placeholder-logo.png",
+      liveUrl: "https://easebot.deepath.live",
+      githubUrl: "https://github.com/deepath15/easebot",
     },
     {
       title: "Inventory Management System",
       description: "A role-based stock tracking solution for businesses to manage inventory efficiently.",
       image: "/ims.png",
       tags: ["React", "Node.js", "MongoDB", "Express"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com/deepath15/project",
+      liveUrl: "https://inventory.deepath.tech",
+      githubUrl: "https://github.com/deepath15/shopify",
     },
   ]
 
   const otherProjects = [
-    {
-      title: "Ease Bot",
-      description:
-        "An AI assistant for automation and productivity, helping users streamline tasks and improve workflow efficiency.",
-      tags: ["React", "Firebase", "AI", "Node.js"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com/deepath15/project",
+     {
+      title: "E-Commerce Dashboard",
+      description: "A comprehensive admin dashboard for managing products, orders, and customer data.",
+      tags: ["React", "Chart.js", "Node.js", "MongoDB"],
+      liveUrl: "",
+      githubUrl: "",
     },
+    
     {
       title: "Learning Management System",
       description: "A secure and interactive LMS platform with integrated PDF viewing and AI-powered content reading through API support.",
       tags: ["Next.js", "MongoDB", "Express", "Node.js"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com/deepath15/project",
+      liveUrl: "",
+      githubUrl: "",
     },
   ]
 
