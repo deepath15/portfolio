@@ -31,8 +31,8 @@ export default function ProjectsSection() {
       description: "AI-driven code generation from UI designs, transforming sketches into functional frontend code.",
       image: "/low-code.png",
       tags: ["React", "AI", "Node.js", "Canvas API"],
-      liveUrl: "",
-      githubUrl: "",
+      liveUrl: "low-code.deepath.tech",
+      githubUrl: "https://github.com/deepath15/low-code",
     },
    {
       title: "Ease Bot",
