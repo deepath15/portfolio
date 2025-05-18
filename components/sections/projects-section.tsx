@@ -32,7 +32,7 @@ export default function ProjectsSection() {
       image: "/low-code.png",
       tags: ["React", "AI", "Node.js", "Canvas API"],
       liveUrl: "https://low-code.deepath.tech",
-      githubUrl: "https://github.com/deepath15/low-code",
+      githubUrl: "https://github.com/deepath15/low-code-fe",
     },
    {
       title: "Ease Bot",
