@@ -35,8 +35,10 @@ export default function ContactSection() {
       },
     })
 
-  
-    gsap.from(formRef.current.querySelectorAll(".form-element"), {
+    const elements = formRef.current.querySelectorAll(".form-element")
+    console.log("GSAP targets:", elements) // Add this line
+
+    gsap.from(elements, {
       y: 30,
       opacity: 0,
       stagger: 0.1,
@@ -267,7 +269,7 @@ export default function ContactSection() {
                 </div>
                 <Button
                   type="submit"
-                  className="form-element w-full rounded-xl bg-gradient-to-r from-teal-400 to-blue-500 px-8 py-6 text-lg font-medium text-white transition-all duration-300 hover:shadow-lg disabled:opacity-70"
+                  className=" w-full rounded-xl bg-gradient-to-r from-teal-400 to-blue-500 px-8 py-6 text-lg font-medium text-white transition-all duration-300 hover:shadow-lg disabled:opacity-70"
                   disabled={isSubmitting}
                 >
                  

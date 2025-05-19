@@ -75,13 +75,13 @@ export async function POST(req: NextRequest) {
       html: htmlTemplate, 
     });
     console.log('Email sent successfully');
-    await transporter.sendMail({
-      from:process.env.EMAIL_USER,
-      to: email,
-      subject: `New message from ${name}: ${subject}`,
-      text: message, 
-      html: responseHtmlTemplate, 
-    });
+    // await transporter.sendMail({
+    //   from:process.env.EMAIL_USER,
+    //   to: email,
+    //   subject: `New message from ${name}: ${subject}`,
+    //   text: message, 
+    //   html: responseHtmlTemplate, 
+    // });
     return NextResponse.json({ message: 'Email sent successfully' }, { status: 200 });
   } catch (error: any) {
     console.error(error);
