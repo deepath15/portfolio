@@ -35,7 +35,7 @@ export default function ContactSection() {
       },
     })
 
-    // Animate form elements
+  
     gsap.from(formRef.current.querySelectorAll(".form-element"), {
       y: 30,
       opacity: 0,
@@ -71,7 +71,7 @@ export default function ContactSection() {
       body: JSON.stringify(data),
     })
     if (!response.ok) {
-      console.error("Error sending email:", response.statusText)
+      // console.error("Error sending email:", response.statusText)
       setIsSubmitting(false)
       return
     }
@@ -270,16 +270,8 @@ export default function ContactSection() {
                   className="form-element w-full rounded-xl bg-gradient-to-r from-teal-400 to-blue-500 px-8 py-6 text-lg font-medium text-white transition-all duration-300 hover:shadow-lg disabled:opacity-70"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? (
-                    <>
-                      <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                      Sending...
-                    </>
-                  ) : (
-                    <>
-                      Send Message <Send className="ml-2 h-5 w-5" />
-                    </>
-                  )}
+                 
+                  {isSubmitting ?  "Sending..." :  " Send Message"  }
                 </Button>
               </form>
             )}
