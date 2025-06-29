@@ -108,10 +108,15 @@ export default function AboutSection() {
           </h2>
           <div className="mx-auto h-1 w-20 bg-gradient-to-r from-teal-400 to-blue-500"></div>
         </motion.div>
-
-        {/* <div className="grid gap-12 md:grid-cols-2">
-          <div className="relative flex items-center justify-center">
-          <div className="relative h-[450px] w-[350px]">
+{
+  /* 
+    style class
+    grid gap-12 grid-cols-2
+  */
+}
+        <div className="">
+         {/* <div className="relative flex items-center justify-center">
+           <div className="relative h-[450px] w-[350px]">
               <ImageEffect
                 src="/placeholder.svg?height=450&width=350"
                 alt="Deepath Selvaraj"
@@ -167,10 +172,10 @@ export default function AboutSection() {
                   <span className="font-medium">Node.js</span>
                 </div>
               </motion.div>
-            </div> 
-          </div>
+            </div>  
+          </div>*/}
 
-          <div className="flex flex-col justify-center">
+          <div className="flex flex-col mx-auto md:w-[50%] justify-center">
             <RevealText className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
               Full Stack Developer & Creative Technologist
             </RevealText>
@@ -186,7 +191,8 @@ export default function AboutSection() {
               intelligence.
             </RevealText>
 
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid  gap-6">
+              <div className="flex md:flex-row flex-col gap-6">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -208,8 +214,11 @@ export default function AboutSection() {
                 className="rounded-xl bg-white p-4 shadow-lg transition-transform duration-300 dark:bg-gray-800"
               >
                 <h4 className="mb-2 font-semibold text-gray-900 dark:text-white">Email</h4>
-                <p className="text-gray-600 dark:text-gray-400">deepath1506@gmail.com</p>
+                <p className="text-gray-600 dark:text-gray-400 ">deepath1506@gmail.com</p>
               </motion.div>
+
+              </div>
+            <div className="flex md:flex-row flex-col gap-6">
 
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -235,8 +244,9 @@ export default function AboutSection() {
                 <p className="text-gray-600 dark:text-gray-400">Open to opportunities</p>
               </motion.div>
             </div>
+            </div>
           </div>
-        </div> */}
+        </div>
 
         <div ref={timelineRef} className="mt-24">
           <h3 className="mb-12 text-center text-2xl font-bold text-gray-900 dark:text-white">My Journey</h3>
