@@ -109,9 +109,9 @@ export default function AboutSection() {
           <div className="mx-auto h-1 w-20 bg-gradient-to-r from-teal-400 to-blue-500"></div>
         </motion.div>
 
-        <div className="grid gap-12 md:grid-cols-2">
+        {/* <div className="grid gap-12 md:grid-cols-2">
           <div className="relative flex items-center justify-center">
-            <div className="relative h-[450px] w-[350px]">
+          <div className="relative h-[450px] w-[350px]">
               <ImageEffect
                 src="/placeholder.svg?height=450&width=350"
                 alt="Deepath Selvaraj"
@@ -121,7 +121,7 @@ export default function AboutSection() {
                 effect="glow"
               />
 
-              {/* Decorative elements */}
+            
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -137,7 +137,7 @@ export default function AboutSection() {
                 className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-blue-500/30 backdrop-blur-md"
               ></motion.div>
 
-              {/* Floating skill badges */}
+             
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -167,7 +167,7 @@ export default function AboutSection() {
                   <span className="font-medium">Node.js</span>
                 </div>
               </motion.div>
-            </div>
+            </div> 
           </div>
 
           <div className="flex flex-col justify-center">
@@ -236,7 +236,7 @@ export default function AboutSection() {
               </motion.div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div ref={timelineRef} className="mt-24">
           <h3 className="mb-12 text-center text-2xl font-bold text-gray-900 dark:text-white">My Journey</h3>

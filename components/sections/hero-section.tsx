@@ -46,11 +46,12 @@ export default function HeroSection() {
   }, [])
 
   return (
-    <section
-      id="home"
-      ref={sectionRef}
-      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-white pt-20 dark:bg-black"
-    >
+   <section
+  id="home"
+  ref={sectionRef}
+  className="relative flex min-h-screen items-center justify-center overflow-hidden bg-white pt-20 dark:bg-black"
+>
+
       {/* Background elements */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,200,255,0.15),transparent_70%)]"></div>
@@ -61,7 +62,13 @@ export default function HeroSection() {
         ></div>
       </div>
 
-      <div className="container relative z-10 mx-auto grid grid-cols-1 gap-12 px-4 md:grid-cols-2">
+
+      {/* class style 
+      grid-cols-1 gap-12 px-4 md:grid-cols-2
+      container relative z-10 mx-auto grid px-4 md:grid-cols-2 gap-12 items-center justify-center
+      */}
+
+<div className="px-4">
         {/* Left side - Text content */}
         <div className="flex flex-col items-start justify-center">
           <motion.div
@@ -120,8 +127,8 @@ export default function HeroSection() {
           </motion.div>
         </div>
 
-        {/* Right side - Image */}
-        <div className="relative flex items-center justify-center">
+        
+        {/* <div className="relative flex items-center justify-center">
           <FloatingElement amplitude={15} duration={6} className="relative h-[450px] w-[350px]">
             <div className="absolute -left-6 -top-6 h-24 w-24 rounded-full bg-teal-400/30 backdrop-blur-md"></div>
             <div className="absolute -bottom-6 -right-6 h-24 w-24 rounded-full bg-blue-500/30 backdrop-blur-md"></div>
@@ -136,7 +143,7 @@ export default function HeroSection() {
             </div>
           </FloatingElement>
 
-          {/* Decorative elements */}
+          
           <motion.div
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -160,7 +167,7 @@ export default function HeroSection() {
               <span className="text-sm font-medium">Creative Technologist</span>
             </div>
           </motion.div>
-        </div>
+        </div> */}
       </div>
 
       <motion.div
