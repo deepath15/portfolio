@@ -69,13 +69,11 @@ export default function DistortionImage({
         const centerY = canvas.height / 2
         const distortionX = (mousePosition.x - centerX) / centerX
         const distortionY = (mousePosition.y - centerY) / centerY
-
         // Apply distortion
         for (let i = 0; i < canvas.height; i += 5) {
           // Calculate wave distortion
           const waveX = Math.sin(i * 0.01 + Date.now() * 0.001) * intensity * distortionX
           const waveY = Math.cos(i * 0.01 + Date.now() * 0.001) * intensity * distortionY
-
           // Draw a slice of the image with distortion
           ctx.drawImage(imageRef.current, 0, i, canvas.width, 5, waveX, i + waveY, canvas.width, 5)
         }
@@ -83,19 +81,15 @@ export default function DistortionImage({
         // Draw the image normally
         ctx.drawImage(imageRef.current, 0, 0, canvas.width, canvas.height)
       }
-
       requestRef.current = requestAnimationFrame(animate)
     }
-
     requestRef.current = requestAnimationFrame(animate)
-
     return () => {
       if (requestRef.current) {
         cancelAnimationFrame(requestRef.current)
       }
     }
   }, [isHovered, mousePosition, imageLoaded, width, height, intensity])
-
   // Fixed handleMouseMove function to ensure e is defined
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!canvasRef.current) return

@@ -184,7 +184,7 @@ export default function ContactSection() {
               </ul>
               <div className="mt-6 rounded-xl bg-gradient-to-r from-teal-400/10 to-blue-500/10 p-4">
                 <p className="text-sm text-gray-700 dark:text-gray-300">
-                  Currently available for freelance projects and full-time opportunities.
+                  Currently Working at Zoho as Member Of Technical Staff.
                 </p>
               </div>
             </div>

@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import RevealText from "@/components/reveal-text"
-import ImageEffect from "@/components/image-effect"
+
 
 export default function AboutSection() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -16,7 +16,6 @@ export default function AboutSection() {
     gsap.registerPlugin(ScrollTrigger)
 
     if (!sectionRef.current || !timelineRef.current || !timelineLineRef.current) return
-
     // Animate the timeline line drawing
     gsap.fromTo(
       timelineLineRef.current,
@@ -33,12 +32,10 @@ export default function AboutSection() {
         },
       },
     )
-
     // Timeline animation
     const timelineItems = timelineRef.current.querySelectorAll(".timeline-item")
     timelineItems.forEach((item, index) => {
       const direction = index % 2 === 0 ? -50 : 50
-
       gsap.fromTo(
         item,
         {
@@ -57,7 +54,6 @@ export default function AboutSection() {
         },
       )
     })
-
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
     }
@@ -85,7 +81,6 @@ export default function AboutSection() {
     description: "Currently freelancing on full stack projects and actively looking for job openings in product-based companies."
   }
 ]
-
 
   return (
     <section id="about" ref={sectionRef} className="relative overflow-hidden bg-gray-50 py-24 dark:bg-gray-900">
@@ -216,10 +211,8 @@ export default function AboutSection() {
                 <h4 className="mb-2 font-semibold text-gray-900 dark:text-white">Email</h4>
                 <p className="text-gray-600 dark:text-gray-400 ">deepath1506@gmail.com</p>
               </motion.div>
-
               </div>
             <div className="flex md:flex-row flex-col gap-6">
-
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
