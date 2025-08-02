@@ -77,8 +77,8 @@ export default function AboutSection() {
   },
   {
     year: "2025",
-    title: "Freelancing & Job Hunt",
-    description: "Currently freelancing on full stack projects and actively looking for job openings in product-based companies."
+    title: "Member Of Technical Staff",
+    description: "Currently working as Member Of Technical Staff at Zoho from August 2025 - Till Date."
   }
 ]
 
